@@ -1,0 +1,173 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@font-face {
+  font-family: IRANSans;
+  src: url(../asset/font/IRANSans-web.woff2);
+}
+@font-face {
+  font-family: ira;
+  src: url(../asset/font/IRANSans-web.woff);
+}
+.body {
+  margin: 0;
+  padding: 0;
+  font-family: ira;
+  font-family: IRANSans;
+}
+.Btn {
+  border: 1px solid #313131;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+}
+.cinematic-cover {
+  width: 100%;
+  height: 200px;
+  background-color: aqua;
+  margin: 50px auto;
+  display: none;
+}
+.serialic-cover {
+  width: 100%;
+  height: 200px;
+  background-color: red;
+  margin: 50px auto;
+  display: none;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.fadeIn {
+  animation-name: fedIn;
+  animation-duration: 500ms;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+.fadeOut {
+  animation-name: fedeOut;
+  animation-duration: 500ms;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+/* مخفی کردن تصویر دسکتاپ در حالت موبایل */
+@media (min-width: 384px) {
+  #desktop-image {
+    display: none;
+  }
+}
+/* مخفی کردن تصویر موبایل در حالت دسکتاپ */
+@media (max-width: 384px) {
+  #mobile-image {
+    display: none;
+  }
+}
+.btn-12 {
+  border-radius: 10px;
+  text-align: center;
+  align-items: center;
+  font-size: 13px;
+}
+#background-img {
+  transition: background-image 1s linear;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.main {
+  background: radial-gradient(
+    130% 44% at 41% 40%,
+    rgb(0, 0, 0, 0) 0,
+    #151515 100%
+  );
+}
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: fit-content;
+  height: fit-content;
+  object-fit: cover;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  color: white !important;
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50% !important;
+  background-color: #151515;
+  bottom: 0 !important;
+  z-index: 1000;
+  position: absolute !important;
+}
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 14px !important;
+}
+.online-cenema {
+  background-image: url("../../asset/image/bg-cinama\ \(1\).png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+}
+.blite {
+  border: 2px solid white;
+  width: 50%;
+}
+.img-sw {
+  border: 2px solid #2b2b2b;
+  backdrop-filter: blur(80px);
+  font-family: IRANSans;
+}
+.ecran {
+  background-color: #1a0d0f;
+  padding: 5px;
+}
+.fontsa {
+  font-family: IRANSans;
+}
+
+.karton {  
+  box-shadow: -20px 20px 120px 20px lightblue inset;
+}
+.plus {
+  transform: rotate(45deg);
+}
+.plus:checked {
+  transform: rotate(90deg);
+}
+.animationbox {
+  box-shadow: inset 400px -300px 80px 120px #00ffff;
+}
+.animationbox2 {
+  box-shadow: inset 120px -300px 80px -50px #00ffff;
+}
