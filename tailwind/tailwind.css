@@ -3,11 +3,11 @@
 @tailwind utilities;
 @font-face {
   font-family: IRANSans;
-  src: url(../asset/font/IRANSans-web.woff2);
+  src: url(../assets/font/IRANSans-web.woff2);
 }
 @font-face {
   font-family: ira;
-  src: url(../asset/font/IRANSans-web.woff);
+  src: url(../assets/font/IRANSans-web.woff);
 }
 .body {
   margin: 0;

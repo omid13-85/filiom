@@ -7,6 +7,8 @@
     <link rel="icon" href="" />
     <link rel="stylesheet" href="./css/main.css" />
     <link rel="stylesheet" href="./tailwind/tailwind.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.23.0/axios.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -557,7 +559,7 @@
       <!-- laptob -->
       <div class="w-full flex flex-row pt-2 pr-3">
         <div class="right pl-5 pt-1">
-          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAYCAYAAACSuF9OAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAEtSURBVHgB7ZfrbYMwFIWvoQOwQekG7QaMkA2aTFAE/A8dAOoRkg26QTtCMkHIBhmAR44lW3Kch6XIVvLDn2Rfgx/3WFjygdEFiqJYMsYyNFNZXNKJMk3Tum3bldnJ6FzMD8TkaP7LiXtyCNZ+RUmxbobHVdM0i6uC8jxP4zjeYfA31NfkkbIsOcLXMAwfnPONeh/pg6IoykQcx/GXPAMhXOZ8P9FgjEtFpSv2BXJ0es5rgh5OEGQjCLIRBNkIgmwEQTZMQQdRiVufPIMciZ7zoiDcvBsZZ+QZlUPlVJwZtKqq/pR5QtySsQMHJMKgIX5i/QN815ve+WKO7vt+AZNWoznDxDn5QWxyDd9Vmx3s1iz5nRNyjOaFnh8GUz8n938W99KJM7SUh+zh4JB3R4TIYgPx1YufAAAAAElFTkSuQmCC" class="w-[25px]" />
+          <img src="./assets/image/laptop (1).png" class="w-[25px]" />
         </div>
         <div class="left">
           <p class="text-[15px] text-white">کامپیوتر و لپ‌تاپ</p>
@@ -570,7 +572,7 @@
       <!-- mobile -->
       <div class="w-full flex flex-row pt-2 pr-3">
         <div class="right pl-5 pt-1">
-          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAYCAYAAAD6S912AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAD4SURBVHgB7VXBEYIwELwEGrACYweWQAeWgB0QoAH9A8YOtAItgRLSgVgI4B6Gf4w82ZmdHJe7heGxK8ihKIqjECJFqRx90DHHcbw3TXPjhnBiF4hplJaJgbePGna2oMJ8gtNUVZULrbWKouiF5hlvOVEAyrI0OLK+73cSYntuDsPwpEBAiAVJSplIfNkkaIyxFAjsdq5UkhbGKrgKroKLCcKREqbPbOwzBEd6uHKziCAcKSdPeAnO9u4D/ocdF+zcFAjsTp6KGLASTt3yQxzHGQUCuwc+4dx2Cqk5E8CWvin2S0jtnetf67rWYr7kGEUmpLhU9EeMfgD3j2dKsEuKEwAAAABJRU5ErkJggg==" class="w-[20px]" />
+          <img src="./assets/image/mobile (1).png" class="w-[20px]" />
         </div>
         <div class="left">
           <p class="text-[15px] text-white">موبایل و تبلت</p>
@@ -583,7 +585,7 @@
       <!-- console-->
       <div class="w-full flex flex-row pt-2 pr-3">
         <div class="right pl-5 pt-1">
-          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAYCAYAAACSuF9OAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMFSURBVHgBvZbbVeMwEIaVkFfOyVaAqYBQAaYEKiBUgLm847wDGypIqGBDBTgV4FSAt4I1SR5z2W8c2UcRchI2WeYcWbI0Gv1z0WgqagUFQeDv7e3dMWzQ6mo7Smm96XTaarfbSRlTpWzh9vb2bj6fh1rQM+NUbUGVSsVDxon0/DYfHh6enXyuSSzTwDJvAgSNAjTaCowh10PuL4be/v7+YRiGn+RWXRvZFKBNskswQuIqZJ4xrA+Hw8DFUy3Ze0Ib2GBubm46aLVxLGGRuljbBoXbItqJ2gSQmJVOWuTgb6ZpuhEgiUEs/UdcjyLvWm5GWGmgFhdlPSAEZIyz2SwyQeYCa7WaZwp30fX1dZP9TaxwyuE/mHpBbidfZz6m+2Q9JyAE+XQppo01GAnwd2nyT2y9ylgOVSUEjy9uub+/j8TtgGoz7eeK5MpWq1Xf3luzJzjsCIFx/q+BZbcR088Rfrgqj2iS2DsqDsGqyFT5PumRlZg8pYBEO7ontQUhQywisSNu+uD/nNYyebBS32WhJZcRiDlD5DhHgvF4A+vk1/tYLSx7AJirx8fH0OTRceTZt7ZmoW7AqEhaUclBsdqQNPBm2TrWicWNo9HI57dXzFt8shi7MuiuaTKZxMaZygkI60hA/1bfQHL7tNuOnIDWJMT/QsRZX1kJsoghV0K0yShHPN1WUUKLdbnhjD1toUvJdTlPAUgSIoGWlm22ypHeOtdq92dVA0k05Ja1bB5RnvU8QS4DshNiCZgn6phAfYHIRV3AhfQD9vbMNZ0gl5JoEUM6IQ5sgRJbGkz3q2CE2NNUC+07rjcQ2X0A+0uAyhKiLqhedW10pf6RdA2kzAfWoEgZCTIDhC89vTExOREQCjPrp9sUauIaydYMfZT/aa5hnUT68XjcKAARVNkkj2CRxvHtJV32Bm3yXKwjgrpL94S8wPCI0IF8SJRJBtAAIDW0pxZp/IMmgHrEwJnaEUkFifJvWKVunSPxeSE8RVBrP7+oxftzzqYWcxdqhyRuF/c7zini8y9838BYYyOHtQAAAABJRU5ErkJggg==" class="w-[25px]" />
+          <img src="./assets/image/laptop (1).png" class="w-[25px]" />
         </div>
         <div class="left">
           <p class="text-[15px] text-white">کنسول‌های بازی (Browser)</p>
@@ -667,7 +669,7 @@
         <div class="w-full">
           <div class="w-full flex flex-row pt-2 pr-3 desktop:flex-none">
             <div class="right pl-5 pt-1">
-              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAAAwCAYAAACynDzrAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAKHSURBVHgB7ZvNjdswEIVHP0cLUAdRKlilA28F61Sw2QriyLpHuduOO0g6WKSCqINoKwhLUOyrbOeNQDqM8kMgEDYLcT7AEMeiDnyYIWnzKaABy+UyDcNwEQRBjvAZPrm+ldG0UBhjez6fW7QfcG1Op1O92+2U3SkwDS3Mazy0RJiSp2D8u/V6/eYSm8ZqtWpwuSKBRWpms9l1VVVtzF8URfGefhanRsp9Qkd1PB4b/V2L9GtpIqBiMlzSOI5TlFaO6rnBmOd8D9d8v99zJVUBd4yi6Kt5EDffbbfbijykLMsK43+rwzZJkucQLpxbfWpfxWEw91SomlqHKbJoEXI6mQ5cVuQ5KLeLBryShyivy9yDbGrIc3jeNW0kTBaStaR3XTeZSfhfsRYlFuuKS8ze83gv0BDOoMwEw12kp9hJ0peYYDHc64lADkQgByKQAxHIgQjkQARyIAI5EIEciEAORCAHIpADEciBCORABHIgAjkQgRyIQA5EIAcskDKBPo71moEGSjLIQcgeGSv21vZiiOM4s0IV4qDswUQ4Wc3Jc3D0nJk2zgy/cQbZJ4k35DnQYG6FdTg4j1/4PFHrsd+amC15vcOsLMvPxjwEFHuEfufXmyp/sB/Wm83muneYdV13F0XRF30zQ8cPiNmWxxP4xWFG0zm753GmGGfKDg76dXFqMTffccM2cbIN7R4PZeQxEEyhel6ievrECIYdiqJ4BaFutbHKl2W/rxQ2kEGcj/b5fPC3p3jSMvsCtslAuEkIBhFa3v9pP1QrrhZBEJ4qAY2MNqbf04+XYB4LlSTJC359gEZk9L87IA4L8z9+9GaHw2FOIzO6QNiB8nseih4Z/tFtW3jH4jspj/y+CVn1iQAAAABJRU5ErkJggg==" class="w-10" />
+              <img src="./assets/image/TV.png" class="w-10" />
             </div>
             <div class="left">
               <p>تلویزیون</p>
@@ -679,7 +681,7 @@
           </div>
           <div class="w-full flex flex-row pt-2 pr-3">
             <div class="right pl-5 pt-1">
-              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAAAwCAYAAACynDzrAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAARlSURBVHgB7VtbVtswEB2bfJJT76BmBYQV1FkB6QqSroCUxzfON6+wAtIVhK4A74BkBfUOMI9PHr2XyqnqQ51ApLzse45qCcuKdT0zmhmpjmTQbrc913UbjuPU0PyMUlO3fFktxJhj8vLykqA+xHXw/PwcdbvdWO/kpBVFzA4eaqPpSUGB+XePj4+/j9ppZW9vb4DLppQgSYP19fV6GIZJhX/Y3d09k3/JiSByP9Exfnp6Gqi/JRC/RFYE0BgfF69SqXhQrRq0ZxtzDngP19rd3R01KXTYcW1t7Vf6IG52Tk9PQykg9vf3Q8z/UDWTarW6AeLcQOsTFZUcArYnhNZEqulBihouxSntQLWSggPqNuKAK7kL9RrZHkjTQAoO2t20DoHxXdGW9MfHx5Uxwh+FtiiRrE2qmO7zFJ6gLChBftrIepEFhS4krypWQkPW1ysJGoOSoDGoiAUgruvDZegcHR3NxG1ANFCDu3IIz/cb4ycxCOMSxKwALgEcrj5ediZZAZDT1x1ekzBOEI0cXpbpAl8FfFaB+Imxk4/SMS09hBUbhHiux5gGZUdFzVbAsfExWigxf1MswJqRhldOKfIg/mdiCRg7xMWHOtfFEqwYaQKqNoCxPkd1B2oQIFKO0nu0U5hcgCrLJwaFGY+eiFGorkMmsBACRLqPQsOMSxOlZ9PBtUYQgUmFIKKJSV5gQltY2VqY7Lb8IWYE3H/rcZ//oH+DV4zD1ZGJvB/MHSvDHKPeEYuw6gcpg80JMCl3g8lS3QL5OAKMcaESfD7Kue3wyCpB+OLcBDgUS+DYSBdbG5+womIqjXsp9jcBPJAU4kO0oM51G9Jkw1EMQM61zHaHhB/kGkQ1xDCMEoQXbOJFr2Q++2r8zT7fQQzCGEHqxXoyf/RMkmSEIOUtd2Vx0D04ODASm01NkDLI81Kr/8EzFSxPTVDq7ud0OcdKU0cx6dBNMqb/8PAwtQvgQF9Tp4ue78Z7lsrsrmwW3GdDEDlaWRByXKXbu1MgOjk5GcVe8IMulXf+JkikHuaMQ2ZO8VQShH3tizFdbvQGxP5WZgxtK/lDqKgzMml7Yp1VqYYgrw/GbuELD0HMJeKwZt6XfgcCjNnmmPjSHG/cmEE2WM4DPrqv8RG7UKth2sIkJrb8yvaMBeMviiw9XjGEdEyZcOXEhCd2IEG8rz136zKVoP3we77wF1keTOwXgYNAa0ZuZj++MUkGkCIry3Ukz1PvnAs19xGZTKu41E3tyAdV5wo63sojigeOZMmQ985M4DEroGLIFEzQDRzVwVc3s0aaGbyBVk8zeoEs36HOGCVSdc6TmQCPJzjkjXnDNm/R5dEPcfIYWh8P+VJgqCzlV0oP2062A9WLS7LaZ1qk8MEmXjWFji3I6em5byfvKaoe/QLWmVQHcStBGEhI6P+p81BJeaqlRIkSiwpHDEP5VH35+59gZoW4Wq1uLfzxF5BDYubhafv39/eBGIZxgriHTmdLZgy1f2/8wNZvUIoA8v2y/PQAAAAASUVORK5CYII=" class="w-10" />
+              <img src="./assets/image/laptop (1).png" class="w-10" />
             </div>
             <div class="left">
               <p class="">اندروید تی‌وی</p>
@@ -884,7 +886,7 @@
             class="ecran rounded-2xl flex flex-row absolute left-6 bg-inherit justify-end"
           >
             <img
-              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADGSURBVHgB7ZXhDcIgEIXBOIAjdANXwAnUSaoTFDdwBEdxBJ1ANqgbnI94P4hyXguJv/iSFxp45dFLuBrTKIGIemikN3EcMp4h8VDOI23eUZ4H5KAddBM83ZQAR+W4z/0WSt4VOglrT+jIHpGlUbDWepzsgscDtObpO3TGWsDatiqAQwIHzEYrUTUtoAXUM+kecI/JXjTtXTUAm/cYPLRKph0UO643c/lHswtCdizLHtr88EjzX1/hk1ONuVKwJ/0pFfWqhnkB3iglXv/B+acAAAAASUVORK5CYII="
+              src="./assets/image/ticket (1).png"
               class="w-4 h-4"
               alt="ticket"
             />
@@ -1263,13 +1265,13 @@
       </div>
     </div>
     <!--end filimo  -->
-    <script src="./public/js/populer.js"></script>
+    <script src="./js/populer.js"></script>
     <script src="./js/slider.js"></script>
     <script src="./js/free_m.js"></script>
     <script src="./js/question.js"></script>
     <script src="./js/message.js"></script>
-    <script src="./node_modules/axios/dist/axios.min.js"></script>
-    <script src="./node_modules/swiper/swiper-bundle.min.js"></script>
+    <script src="./axios/dist/axios.min.js"></script>
+    <script src="./swiper/swiper-bundle.min.js"></script>
 
     <script>
       var swiper = new Swiper(".mySwiper", {
