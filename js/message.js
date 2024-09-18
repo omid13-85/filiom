@@ -12,7 +12,7 @@ let Messege = async () => {
                   <h5 class="text-[13px] text-white">${messege.name}</h5>
                 </div>
                 <div class="w-fit pl-2">
-                  <img class="w-[10px] h-[10px]" src="../../asset/image/download (2).png" alt="">
+                  <img class="w-[10px] h-[10px]" src="https://www.filimo.com/assets/web/ui/img-EO6bydFk6Yq4pMaEiCWiw/campaigns/big-screen_v2/virgol.png" alt="">
                 </div>
               </div>
               <div class="bottom w-fit">
