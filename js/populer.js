@@ -82,11 +82,11 @@ let Movie = async () => {
     movies = res.data
   });
   series.forEach((item, index) => {
-    seriesDiv.innerHTML += `<div class="min-w-[130px] min-h-[150px] desktop:min-w-[163px] desktop:min-h-[221px] hover:scale-110 transition-all duration-300 hover:border-2 hover:border-white   bg-no-repeat cursor-pointer   bg-center bg-cover rounded-lg" onclick=" seriesClickHandler(${index})" style="background-image: url(${item.image});">
+    seriesDiv.innerHTML += `<div class="min-w-[130px] min-h-[150px] desktop:min-w-[163px] desktop:min-h-[221px] hover:scale-110 transition-all duration-300 hover:border-2 hover:border-white   bg-no-repeat cursor-pointer   bg-center bg-cover rounded-lg" onclick=" seriesClickHandler(${index})" style="background-image: url(${item.images});">
     </div>`;
   });
   movies.forEach((item, index) => {
-    moviesDiv.innerHTML += `<div class="min-w-[130px] min-h-[150px] desktop:min-w-[163px] desktop:min-h-[221px] hover:scale-110 transition-all duration-300 hover:border-2 hover:border-white   bg-no-repeat cursor-pointer   bg-center bg-cover rounded-lg" onclick=" moviesClickHandler(${index})" style="background-image: url(${item.imageurl});">
+    moviesDiv.innerHTML += `<div class="min-w-[130px] min-h-[150px] desktop:min-w-[163px] desktop:min-h-[221px] hover:scale-110 transition-all duration-300 hover:border-2 hover:border-white   bg-no-repeat cursor-pointer   bg-center bg-cover rounded-lg" onclick=" moviesClickHandler(${index})" style="background-image: url(${item.image});">
     </div>`;
   });
 }
