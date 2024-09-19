@@ -19,6 +19,9 @@
   scale: 0.7;
   rotate: 45deg;
 }
+.svg__prem:hover {
+  transform: rotate(90deg);
+}
 .cinematic-cover {
   width: 100%;
   height: 200px;
@@ -159,12 +162,7 @@
 .karton {  
   box-shadow: -20px 20px 120px 20px lightblue inset;
 }
-.plus {
-  transform: rotate(45deg);
-}
-.plus:checked {
-  transform: rotate(90deg);
-}
+
 .animationbox {
   box-shadow: inset 400px -300px 80px 120px #00ffff;
 }
