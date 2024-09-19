@@ -19,9 +19,6 @@
   scale: 0.7;
   rotate: 45deg;
 }
-.svg__prem:hover {
-  transform: rotate(90deg);
-}
 .popularbox{
   box-shadow: 0px 5px 5px #141515;
 }
