@@ -1,4 +1,4 @@
-let movies , series;
+let movies, series;
 let dailyserial = document.querySelector('.main-daily')
 let dailycinema = document.querySelector('.main-daily-cinematic');
 let btn = document.querySelector('.btn-cinematic');
@@ -17,68 +17,68 @@ let boxDic = document.querySelector(".daily-director");
 let boxDiccinema = document.querySelector(".daily-director-cinema");
 let boxDec = document.querySelector(".daily-description");
 let boxDeccinema = document.querySelector(".daily-description-cinema");
-btn.addEventListener("click" , () =>{
-      coverCinema.classList.remove("fadeOut")
-      coverCinema.classList.add("fadeIn");
-      btn.style.backgroundColor = "#F8A53E"
-      btnserial.style.backgroundColor = "transparent"
-      setTimeout(() =>{
-        dailyserial.classList.add("hidden")
-        coverCinema.classList.add("active");
-        coverSerial.classList.remove("active");
-        coverSerial.classList.remove("flex");
-        coverCinema.classList.add("flex");
-        dailycinema.classList.remove("hidden");
-        dailycinema.classList.add("flex");
-        
-        
-      }, 100)
+btn.addEventListener("click", () => {
+  coverCinema.classList.remove("fadeOut")
+  coverCinema.classList.add("fadeIn");
+  btn.style.backgroundColor = "#F8A53E"
+  btnserial.style.backgroundColor = "transparent"
+  setTimeout(() => {
+    dailyserial.classList.add("hidden")
+    coverCinema.classList.add("active");
+    coverSerial.classList.remove("active");
+    coverSerial.classList.remove("flex");
+    coverCinema.classList.add("flex");
+    dailycinema.classList.remove("hidden");
+    dailycinema.classList.add("flex");
 
-      
+
+  }, 100)
+
+
 });
-btnserial.addEventListener("click" , () =>{
-    coverCinema.classList.remove("fadeIn");
-    coverCinema.classList.add("fadeOut");
-    coverSerial.classList.add("fadeIn");
-    btnserial.style.backgroundColor = "#F8A53E"
-    btn.style.backgroundColor = "transparent"
-    setTimeout(() =>{
-        dailyserial.classList.remove("hidden")
-        dailycinema.classList.add("hidden")
-        coverCinema.classList.remove("active");
-        coverCinema.classList.remove("flex");
-        coverSerial.classList.add("active");
-        coverSerial.classList.add("flex");
-        
-      }, 50)
+btnserial.addEventListener("click", () => {
+  coverCinema.classList.remove("fadeIn");
+  coverCinema.classList.add("fadeOut");
+  coverSerial.classList.add("fadeIn");
+  btnserial.style.backgroundColor = "#F8A53E"
+  btn.style.backgroundColor = "transparent"
+  setTimeout(() => {
+    dailyserial.classList.remove("hidden")
+    dailycinema.classList.add("hidden")
+    coverCinema.classList.remove("active");
+    coverCinema.classList.remove("flex");
+    coverSerial.classList.add("active");
+    coverSerial.classList.add("flex");
+
+  }, 50)
 })
 
 let seriesClickHandler = (index) => {
-  let {backgroundS ,NameSe , logo , dic , about} = series[index];
+  let { backgroundS, NameSe, logo, dic, about } = series[index];
   backgroundImage.style.backgroundImage = `url(${backgroundS})`;
   boxName.textContent = NameSe;
   boxLogo.src = logo;
-  boxDic.textContent =` کارگردان : ${dic}`;
+  boxDic.textContent = ` کارگردان : ${dic}`;
   boxDec.textContent = about;
-  
+
 };
 let moviesClickHandler = (index) => {
-  let {background , MoviesName , logo , director , description} = movies[index];
-  backgroundImagecinema.style.backgroundImage = `url(${background})`;
-  boxNamecinema.textContent = MoviesName;
+  let { title, logo, dic, about, background_img } = movies[index];
+  backgroundImagecinema.style.backgroundImage = `url(${background_img})`;
+  boxNamecinema.textContent = title;
   boxLogocinema.src = logo;
-  boxDiccinema.textContent =` کارگردان : ${director}`;
-  boxDeccinema.textContent = description;
-  
+  boxDiccinema.textContent = ` کارگردان : ${dic}`;
+  boxDeccinema.textContent = about;
+
 };
 
 
 
 let Movie = async () => {
-  await axios.get("https://omid13-85.github.io/db.-filimo.json/json/series.json").then((res)=>{
+  await axios.get("https://omid13-85.github.io/db.-filimo.json/json/series.json").then((res) => {
     series = res.data
   });
-  await axios.get("https://omid13-85.github.io/db.-filimo.json/json/movies.json").then((res)=>{
+  await axios.get("https://omid13-85.github.io/db.-filimo.json/json/movies.json").then((res) => {
     movies = res.data
   });
   series.forEach((item, index) => {
