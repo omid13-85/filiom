@@ -428,71 +428,122 @@
       </div>
     </div>
     <!--end div -->
-    <!-- populer -->
-
-    <div class="popular bg-[#151515] desktop:relative w-100% desktop:h-[304px]">
-      <p
-        class="text-[20px] text-[white] font-bold desktop:text-[18px] text-center desktop:absolute desktop:top-10 desktop:right-5"
-      >
-        محبوب‌ترین‌های فیلیمو
-      </p>
-      <button
-        class="btn-serial mobile:-translate-x-10 desktop:-translate-x-56 desktop:translate-y-7 mobile:mt-3 text-white bg-[#F8A53E] rounded-2xl mobile:px-16 desktop:px-2 content-center"
-      >
-        سریال
-      </button>
-      <button
-        class="btn-cinematic desktop:-translate-x-56 desktop:translate-y-7 text-white rounded-2xl mobile:px-16 desktop:px-4 bg-[#151515]"
-      >
-        فیلم
-      </button>
+    <div
+      class="fav bg-inherit text-white flex items-center justify-center flex-col pt-[20px] desktop:items-start desktop:mx-auto desktop:w-full"
+    >
       <div
-        id="seriesContent"
-        class="serialic-cover w-full desktop:h-auto desktop:popularbox flex desktop:gap-x-28 desktop:justify-center flex-shrink-0 gap-x-5 py-3 bg-[#151515] mobile:overflow-x-auto"
-      ></div>
-      <div
-        id="movieContent"
-        class="cinematic-cover desktop:h-auto desktop:popularbox desktop:gap-x-28 desktop:justify-center flex-shrink-0 gap-x-5 py-3 bg-[#151515] mobile:overflow-x-auto"
-      ></div>
-    </div>
-    <div class="main-daily w-full h-[360px] relative mb-16 desktop:mt-7">
-      <div
-        style="
-          background-image: url(https://static.cdn.asset.filimo.com/flmt/mov_cvr_filimo_hor_149398_364.jpg?width=1920&quality=80&secret=HgXjNy-k5fb1JKhhAxeh6g);
-        "
-        class="daily-background w-full h-[360px] desktop:h-[500px] desktop:bg-top relative bg-left bg-cover desktop:karimbox mobile:karim"
+        class="flex flex-col w-full justify-center items-center desktop:flex-row desktop:justify-start max-w-[1440px] desktop:pr-6 desktop:mx-auto"
       >
-        <div class="w-fit absolute top-0 left-5 desktop:left-48 z-5">
-          <img
-            src="https://static.cdn.asset.filimo.com/flmt/mov_logo_85436_913.png?width=400&quality=85&secret=kfquje7CjB2ggH6NkCDnEA"
-            class="w-[177px] h-[177px] desktop:w-[220px] desktop:h-[144px] daily-logo"
-            alt=""
-          />
-        </div>
         <h2
-          class="daily-Name text-white absolute top-0 right-0 desktop:right-36 z-10 font-bold pt-2"
+          class="text-center text-[whitesmoke] font-bold text-[17px] desktop:text-right leading-6 mb-[20px] desktop:mb-0 desktop:ml-2"
         >
-          زخم کاری
+          محبوب ترین های فیلیمو
         </h2>
-        <p
-          class="daily-director text-[#8E8E8E] text-[12px] absolute top-10 right-0 desktop:right-36 desktop:top-16 z-10"
+        <div
+          class="flex bg-gray-800 rounded-full p-1 w-[90%] desktop:w-[10%] justify-evenly"
         >
-          کارگردان:محمد حسین محدویان
-        </p>
-        <p
-          class="daily-sort text-[white] text-[10px] bg-[#282828] rounded-2xl desktop:top-24 desktop:right-36 px-3 py-1 absolute top-24 right-0 z-10"
+          <button id="moviesBtn" class="tab-button active w-[50%] text-xs">
+            فیلم
+          </button>
+          <button id="seriesBtn" class="tab-button w-[50%] text-xs">
+            سریال
+          </button>
+        </div>
+      </div>
+
+      <div id="content" class="mt-8 text-center w-full">
+        <div
+          id="moviesContent"
+          class="flex items-center max-w-[1440px] desktop:mx-auto justify-around overflow-x-auto w-full pb-12 gap-6"
+        ></div>
+        <div
+          id="seriesContent"
+          class="hidden items-center max-w-[1440px] desktop:mx-auto justify-around overflow-x-auto w-full gap-6 pb-12"
+        ></div>
+        <!-- dropdown series -->
+
+        <div
+          class="favourite__info desktop:w-full bg-cover bg-no-repeat bg-center desktop:bg-top"
+          style="
+            background-image: url(https://static.cdn.asset.filimo.com/flmt/mov_cvr_filimo_hor_145612_207.jpg?width=1920&quality=80&secret=6pwbepXRS9PzzEqpxEyUtg);
+            -webkit-box-shadow: inset 0px 0px 35px 29px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: inset 0px 0px 35px 29px rgba(0, 0, 0, 0.75);
+            box-shadow: inset 0px 0px 35px 29px rgba(0, 0, 0, 0.75);
+          "
         >
-          خانوادگی
-        </p>
-        <p
-          class="daily-description text-white text-[12px] desktop:text-[14px] font-semibold absolute desktop:top desktop:top-36 desktop:right-36 bottom-32 right-2 z-10"
-        >
-          با فرار طلوعی، حالا دیگر مالک در یک قدمی تصاحب هولدینگ است.…
-        </p>
+          <div
+            class="favourite__info__text flex flex-col justify-evenly items-start w-full h-full p-3 desktop:p-[6.75rem] desktop:relative"
+          >
+            <div class="flex items-center justify-between mb-24">
+              <p
+                class="favorite__info__title text-[17px] mt-12 font-bold desktop:absolute desktop:right-[4.5rem] desktop:top-2 desktop:mt-0"
+              >
+                شب های مافیا : زودیاک
+              </p>
+              <img
+                class="w-1/3 banner-logo desktop:absolute desktop:w-[220px] left-40 top-2"
+                src="https://static.cdn.asset.filimo.com/flmt/mov_logo_137093_589.png?width=400&quality=85&secret=n9AW7B2hhMceD8DJwgLBHA"
+                alt=""
+              />
+            </div>
+            <div>
+              <p
+                class="favorite__info__dic mb-4 text-[#d3d3d3] font-bold text-xs text-right desktop:absolute desktop:right-[4.5rem] desktop:top-14"
+              >
+                کارگردان : محمدرضا رضاییان
+              </p>
+              <p
+                class="m-0 favorite__info__dec text-justify font-bold text-[white] text-[0.8rem] overflow-hidden leading-8 max-w-[700px] desktop:absolute desktop:right-[4.5rem] desktop:top-20"
+              >
+                «شب های مافیا»، گیم شوی جذابی است که در آن یک قاتل سریالی به نام
+                «زودیاک»، شهروندان و مافیای سیسیل را هدف قرار می دهد. در این
+                برنامه محمد بحرانی نقش گرداننده بازی را بر عهده دارد.
+              </p>
+              <a
+                href="#"
+                class="items-center gap-3 px-12 bg-[--filcolor] rounded-lg text-center py-[17px] mt-5 mobile:hidden desktop:flex absolute desktop:top-32 desktop:right-[4.5rem]"
+              >
+                <svg
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  height="24"
+                >
+                  <defs>
+                    <g id="ui-icon-subscription" viewBox="0 0 24 24">
+                      <path
+                        d="M19 4H5A3 3 0 0 0 2 7V17a3 3 0 0 0 3 3H19a3 3 0 0 0 3-3V7A3 3 0 0 0 19 4Zm1 13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7A1 1 0 0 1 5 6H19a1 1 0 0 1 1 1Z"
+                      ></path>
+                      <path
+                        d="M12.4 11 9 8.74A1.25 1.25 0 0 0 7 9.79v4.42A1.26 1.26 0 0 0 9 15.27l3.44-2.21A1.26 1.26 0 0 0 12.4 11Z"
+                      ></path>
+                      <circle cx="16" cy="9" r="1"></circle>
+                      <circle cx="16" cy="15" r="1"></circle>
+                      <circle cx="16" cy="12" r="1"></circle>
+                    </g>
+                  </defs>
+                  <g fill="#FFFFFF">
+                    <path
+                      d="M19 4H5A3 3 0 0 0 2 7V17a3 3 0 0 0 3 3H19a3 3 0 0 0 3-3V7A3 3 0 0 0 19 4Zm1 13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7A1 1 0 0 1 5 6H19a1 1 0 0 1 1 1Z"
+                    ></path>
+                    <path
+                      d="M12.4 11 9 8.74A1.25 1.25 0 0 0 7 9.79v4.42A1.26 1.26 0 0 0 9 15.27l3.44-2.21A1.26 1.26 0 0 0 12.4 11Z"
+                    ></path>
+                    <circle cx="16" cy="9" r="1"></circle>
+                    <circle cx="16" cy="15" r="1"></circle>
+                    <circle cx="16" cy="12" r="1"></circle>
+                  </g>
+                </svg>
+                <p class="m-0 text-white">خرید اشتراک و تماشا</p>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- dropdown movies -->
       </div>
     </div>
-
-    <!--end populer -->
     <!-- تماشای فیلیمو با همه دستگاه‌ها -->
     <div id="devise" class="w-full desktop:hidden">
       <h1 class="font-bold text-[20px] text-white px-2">
